@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css'
+// import  Bowling from '../public/bowling_PNG15.png'
 
 class App extends React.Component {
   constructor(props){
@@ -11,7 +12,13 @@ class App extends React.Component {
 
   getAnswer = () => {
     //This is where you will write your Magic 8 Ball code
-    return "The Magic 8 ball answer"
+    const answers = "It is certain, It is decidedly so, Without a doubt, Yes – definitely, You may rely on it, As I see it, yes, Don’t count on it, My reply is no, My sources say no, Outlook not so good, and very doubtful".toUpperCase().split(","); // this makes it into an array
+
+    const randomNumber = Math.floor(Math.random() * answers.length);
+
+    const response = answers[randomNumber];
+
+    return response;
   }
 
   handleSubmit = () =>{
@@ -21,20 +28,23 @@ class App extends React.Component {
 
   render(){
     return (
+
       <div>
-        <h1>Magic 8 Ball</h1>
+        <h1>SPEAK INTO THE FLAMES</h1>
+        <br/>
         <input
-          type='text'
+          type='text' placeholder="SPEAK HERE!"
         />
         <br />
         <button
           onClick={this.handleSubmit}
         >
-          Ask the Magic 8 Ball
+          PRESS THE BUTTON TO DISCOVER YOUR FATE
         </button>
 
         {this.state.answer &&
-          <h2> The Magic 8 Ball says: {this.state.answer} </h2>
+          <h1> THE FLAMES HAVE SPOKEN: <br/>
+          {this.state.answer} </h1>
         }
       </div>
     )
