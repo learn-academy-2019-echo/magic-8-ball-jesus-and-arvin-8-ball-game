@@ -33,7 +33,7 @@ class App extends React.Component {
         <h1>SPEAK INTO THE FLAMES</h1>
         <br/>
         <input
-          type='text' placeholder="SPEAK HERE!"
+          type='text' placeholder="SPEAK HERE! "
         />
         <br />
         <button
